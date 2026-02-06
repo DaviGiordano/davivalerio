@@ -1,0 +1,32 @@
+---
+title: "tiny thought: squares and sets of sets."
+description: "On the contrapositive."
+pubDate: 2026-02-06
+tags: ["meta"]
+draft: false
+order: 2
+---
+
+This tiny thought was inspired by exercise 1.2.4 of Stephen Abbot's book "Understanding Analysis", paired with the solution set given by Ulisse Mini at https://uli.rocks/abbott/.
+
+This exercise asks: construct sets $A_1, A_2, A_3, ...$ such that $\bigcap_{i=1}^{\infty} A_i = \emptyset$ and $\bigcup_{i=1}^{\infty} A_i = \mathbb{N}$.
+
+To paraphrase the math notation, we aim to construct sets whose intersection is the empty set and whose intersection is the natural numbers. At first, I was baffled and surprised by the simplicity of the exercise prompt, but struggled to propose such a collection of sets.
+
+After spending some time trying to create the sets by using prime factorization and the fundamental theorem of algebra, I peeked at the solution and was humbled by its simplicity. Ulisse beautifully unrolls $\mathbb{N}$ into a square:
+$$
+\begin{array}{ccccc}
+1 & 3 & 6 & 10 & 15 & ... \\
+2 & 5 & 9 & 14 & ... \\
+4 & 8 & 13 & ... \\
+7 & 12 & ... \\
+11  & ... \\
+\vdots 
+\end{array}
+$$
+
+And thus, we can denote each row as $A_i$. Nice! I believe this is linked to the diagonalization proof strategy we will see further down the line in Abbot's book. 
+
+I find this rather beautiful. Imagine doing this in more dimensions!
+
+dgv

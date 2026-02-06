@@ -1,0 +1,33 @@
+---
+title: "tiny thought: rain is wet"
+description: "On the contrapositive."
+pubDate: 2026-02-06
+tags: ["meta"]
+draft: false
+order: 1
+
+---
+
+This is the first post from a series I name "tiny thoughts".  It will consist of small compositions that illustrates some concept I find beautiful. This one is about the contrapositive.
+
+
+From logic theory, we know that the statement "if $P$ then $Q$" is equivalent to "if not $Q$ then not $P$" (known as the contrapositive). One metaphor that helped me grasp the intuition of this fact is the pair of statements:
+ - If it rained, then the ground is wet.
+ - If the ground is not wet, then it did not rain.
+
+Let's appreciate this pair for a moment. Suppose that we want to know if it rained only by looking at the ground. If the ground is wet, it may have rained, but we can not say that it rained for sure. The ground may be wet because someone watered it with  a hose. On the other hand, if the ground is **not** wet, then we know for sure that **it did not rain**, because if it *had* rained, the ground would be wet.
+
+I was reminded of this equivalence while understanding how to prove that $\sqrt{3}$ is irrational. In the proof, at some point we must include that if $p^2$ is a multiple of $3$, then $p$ is also a multiple of $3$, where $p$ is an integer. Formally, we can write the following:
+
+$$\text{Lemma: } p^2 = 3r \implies p = 3t; \quad p, r, t \in \mathbb{Z}.$$
+
+To prove that, it is easier to prove that $\neg (p = 3t) \implies \neg (p^2=3r)$. If $p$ is not a multiple of $3$, then it can be written in one of two ways, where $k$ is an integer:
+
+1. $p = 3k + 1$ (leaves a remainder of 1) or
+2. $p = 3k + 2$ (leaves a remainder of 2).
+
+In the first case, $p^2=9k^2+6k+1$, which can be written as $p^2=3(3k^2+2k)+1$. Hence, $p^2$ is not a multiple of $3$. In the second case, we find that $p^2=3(3k^2+4k+1)+1$, which is also a not multiple of $3$. Therefore, since we have proved that the contrapositive is true, the original Lemma is also true. 
+
+Tying this solution back to our metaphor, we have proved that the statement "*If the ground is not wet, then it did not rain*" is true. Therefore, "*If it rained, then the ground is wet*" -- the statement we actually wanted to prove -- is also true.
+
+dgv
