@@ -1,0 +1,54 @@
+---
+title: "Code Kata: Leap Years"
+description: "Leap Years"
+pubDate: 2026-02-18
+tags: ["meta"]
+draft: false
+order: 6
+---
+I have started doing code katas, inspired by a video Emily Bache did at the Modern Software Engineering YouTube channel ([video](https://www.youtube.com/watch?v=ZW4AEKbHE28)). These are actually quite fun, and I have found them to be a neat way to get into Test Driven Development.
+
+Here is my solution for the Leap Years code kata ([problem link](https://sammancoaching.org/kata_descriptions/leap_years.html)):
+
+```python
+import pytest
+
+
+def is_leap_year(year: int):
+    if year <= 0:
+        raise ValueError("Year must be greater than 0")
+    if not isinstance(year, int):
+        raise TypeError("Year must be int")
+
+    if (year % 100 == 0) and not (year % 400 == 0):
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
+
+
+@pytest.mark.parametrize(
+    "year, expected",
+    [
+        (1901, False),  # Not divisible by 4
+        (2004, True),  # Divisible by 4, not 100
+        (2100, False),  # Divisible by 100, not 400
+        (2000, True),  # Divisible by 100 and 400
+    ],
+)
+def test_leap_year_rules(year, expected):
+    assert is_leap_year(year) is expected
+
+
+def test_negative_year():
+    year = -100
+    with pytest.raises(ValueError):
+        is_leap_year(year)
+
+
+def test_non_int():
+    with pytest.raises(TypeError):
+        print(is_leap_year(3.4))
+
+```
